@@ -14,6 +14,8 @@
 
 ![GitHub stars](https://img.shields.io/github/stars/my-txz/dsh-weather-island)
 
+**简体中文** | [English](./README.en.md)
+
 > 天气不该只是一个小数字。  
 > 它应该是一块能拖到任何角落、随晴雨昼夜换肤、双源对照、还能提醒你什么时候下雨的「灵动岛」。
 
