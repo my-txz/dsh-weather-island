@@ -20,7 +20,9 @@
 **dsh-weather-island** 是 DeepSeek Harness（DSH）的天气插件：可拖动的灵动岛式悬浮天气看板。  
 免 Key 开箱即用，默认 **Uapi（主）+ Open-Meteo** 双源并排；6 大数据源可选，最多 2 源对照；深浅主题自动适配；失败自动换源，界面无感。
 
-![icon](https://picui.ogmua.cn/s1/2026/10/17/6ad32644828d2.webp)
+![icon](https://github.com/my-txz/dsh-weather-island/blob/main/dsh-weather-island/icon.svg)
+
+![DSH icon](https://picui.ogmua.cn/s1/2026/10/17/6ad32644828d2.webp)
 
 <p align="center">
   <img src="https://picui.ogmua.cn/s1/2026/10/17/6ad3257930151.webp" alt="dsh-weather-island 界面预览 5" width="60%" />
