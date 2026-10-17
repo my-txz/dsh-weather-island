@@ -4,10 +4,12 @@
 # 并绑定在 name 为裸包名的这一行上（子路径行不会携带半身）。
 #
 # 安装方式（任选其一）：
+#   dsh plugin add .\dsh-weather-island-2.1.0.tgz             # 从仓库自带的打包文件（最简单）
 #   dsh plugin add github:<your-user>/dsh-weather-island      # 从 Git 仓库
-#   dsh plugin add ./dsh-weather-island                        # 从本地目录
-#   dsh plugin add ./dsh-weather-island-1.0.0.tgz              # 从打包后的 tarball
+#   dsh plugin add .\dsh-weather-island                       # 从本地目录
 # 上述命令会自动把本包追加到 dsh.profile.bundles 并应用此 insert。
+# 其中 .tgz 由 `pnpm pack`（在 dsh-weather-island/ 内执行）重新生成，
+# 已放在仓库根目录，也可在 DSH「插件 → 添加插件」对话框中直接选择该文件。
 - insert:
     - id: weather-island
       name: dsh-weather-island

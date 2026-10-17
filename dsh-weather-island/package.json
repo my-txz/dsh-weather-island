@@ -4,6 +4,15 @@
   "description": "DeepSeek Harness 天气插件 v2.1：可拖动灵动岛式悬浮看板。场景化卡片背景随天气/昼夜切换 7 套极光配色（晴/夜/云/雨/雷/雪/霾，含星星/雨丝/飘雪/雾带细节层，经 ΔE 区分度与 WCAG 对比度双重验证）；设置页 hero 横幅+渐变分段控件+定制滑杆；未配代理不再重发主端点；备份端点超时收紧；竞态守卫防旧请求覆盖新数据；双源失败汇总+一键重试；IP 定位双源回退；搜索建议键盘导航；U 键切单位；修复 Uapi 超时/多端点切换、拖动落点语义、日期标签错位等。",
   "type": "module",
   "main": "host.js",
+  "icon": "./icon.svg",
+  "files": [
+    "host.js",
+    "index.js",
+    "cordis.patch.yml",
+    "icon.svg",
+    "README.md",
+    "LICENSE"
+  ],
   "exports": {
     ".": "./host.js",
     "./client": "./index.js",
