@@ -6,6 +6,27 @@
 
 ![icon](./icon.svg)
 
+## 📦 安装
+
+仓库根目录已附带打包好的插件文件 **`dsh-weather-island-2.1.0.tgz`**，免 Git、免 npm 发布，拿到仓库后一条命令即可安装：
+
+```bash
+dsh plugin add .\dsh-weather-island-2.1.0.tgz
+```
+
+也可以在 DSH 网页端 **插件 → 添加插件** 对话框中直接选择这个 `.tgz` 文件，或在输入框里填它的绝对路径。安装时会自动把插件追加到 profile 的 `dsh.profile.bundles` 并应用 `cordis.patch.yml` 的挂载声明，无需手改配置。
+
+其它安装方式（任选其一）：
+
+```bash
+dsh plugin add github:<your-user>/dsh-weather-island   # 从 Git 仓库
+dsh plugin add <本仓库绝对路径>\dsh-weather-island      # 从本地目录
+```
+
+> 重新打包：在 `dsh-weather-island/` 内执行 `pnpm pack --pack-destination ..`，
+> `package.json` 的 `files` 白名单保证包内只含运行所需文件
+> （`host.js` / `index.js` / `cordis.patch.yml` / `icon.svg` / README / LICENSE）。
+
 ## ✨ v2.1 修复与新增
 
 ### 🎨 场景化卡片背景（新增）
@@ -228,23 +249,25 @@ IP 定位从单源升级为**双源自动回退**：`ipwho.is`（主）→ `ipap
 ## 📦 仓库结构
 
 ```
-dsh-weather-island/
-├── index.js              客户端半身（~4000 行）：数据源、场景化渲染、设置页
-├── host.js               host 半身：静态资源与注入
-├── cordis.patch.yml      插件清单
-├── icon.svg              图标
-├── package.json          version 2.1.0
-├── verify-client.cjs     离线自检（单元断言，含 v2.1 专项）
-├── render-smoke.cjs      渲染冒烟（React 元素树 + 指引逐步渲染 + 竞态守卫行为）
-├── guide-visual.cjs      指引视觉检查（真实浏览器测量）
-├── guide-interact.cjs    指引交互检查（真实浏览器点击走完全程）
-├── scene-contrast.cjs    场景配色确定性验证（对比度/区分度/fx 断言）
-├── ui-screenshot.cjs     完整看板 8 状态截图（独立页）+ 几何断言
-├── ui-pixel-verify.cjs   像素级独立验证（单图唯一/色相/粒子/对比度）
-├── settings-screenshot.cjs 设置页截图 + hero/渐变断言
-├── live-probe.cjs        真实网络验证（Uapi 多端点/自动切换等）
-├── moji-live-probe.cjs   墨迹爬虫真实网络验证（可传轮次）
-└── shots/                截图输出目录（自检产物，已 gitignore）
+DSH自制天气插件/                      仓库根目录
+├── dsh-weather-island-2.1.0.tgz     ← 打包好的安装文件（pnpm pack 产物）
+└── dsh-weather-island/
+    ├── index.js              客户端半身（~4000 行）：数据源、场景化渲染、设置页
+    ├── host.js               host 半身：静态资源与注入
+    ├── cordis.patch.yml      插件清单
+    ├── icon.svg              图标（package.json.icon，插件页卡片展示）
+    ├── package.json          version 2.1.0（dsh.bundle.patch 声明 + files 打包白名单）
+    ├── verify-client.cjs     离线自检（单元断言，含 v2.1 专项）
+    ├── render-smoke.cjs      渲染冒烟（React 元素树 + 指引逐步渲染 + 竞态守卫行为）
+    ├── guide-visual.cjs      指引视觉检查（真实浏览器测量）
+    ├── guide-interact.cjs    指引交互检查（真实浏览器点击走完全程）
+    ├── scene-contrast.cjs    场景配色确定性验证（对比度/区分度/fx 断言）
+    ├── ui-screenshot.cjs     完整看板 8 状态截图（独立页）+ 几何断言
+    ├── ui-pixel-verify.cjs   像素级独立验证（单图唯一/色相/粒子/对比度）
+    ├── settings-screenshot.cjs 设置页截图 + hero/渐变断言
+    ├── live-probe.cjs        真实网络验证（Uapi 多端点/自动切换等）
+    ├── moji-live-probe.cjs   墨迹爬虫真实网络验证（可传轮次）
+    └── shots/                截图输出目录（自检产物，已 gitignore）
 ```
 
 ## 🗂️ 数据源
