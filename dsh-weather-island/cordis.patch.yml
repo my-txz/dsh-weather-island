@@ -1,0 +1,14 @@
+# dsh-weather-island bundle patch.
+#
+# 一行 insert 即挂载 Host 半身；浏览器半身由 package.json 的 dsh.client 声明，
+# 并绑定在 name 为裸包名的这一行上（子路径行不会携带半身）。
+#
+# 安装方式（任选其一）：
+#   dsh plugin add github:<your-user>/dsh-weather-island      # 从 Git 仓库
+#   dsh plugin add ./dsh-weather-island                        # 从本地目录
+#   dsh plugin add ./dsh-weather-island-1.0.0.tgz              # 从打包后的 tarball
+# 上述命令会自动把本包追加到 dsh.profile.bundles 并应用此 insert。
+- insert:
+    - id: weather-island
+      name: dsh-weather-island
+      config: {}
